@@ -1,23 +1,13 @@
 // Combinatoria modular - Precalculo O(N + log MOD), consultas O(1)
 // Requiere MOD primo y n < MAXN. Llamar precom() una vez antes de usar.
+// Usa power(x, y, M) de binary-exponentiation.
 
 const ll MOD = 1e9 + 7;
 const int MAXN = 2e6 + 5;
 ll fac[MAXN], ifac[MAXN];
 
-ll fastpow(ll b, ll e) {
-    ll res = 1;
-    b %= MOD;
-    while (e > 0) {
-        if (e & 1) res = res * b % MOD;
-        b = b * b % MOD;
-        e >>= 1;
-    }
-    return res;
-}
-
 // Inverso modular por Fermat: a^(MOD-2) (MOD primo, a no multiplo de MOD)
-ll inv(ll a) { return fastpow(a, MOD - 2); }
+ll inv(ll a) { return power(a % MOD, MOD - 2, MOD); }
 
 void precom() {
     fac[0] = 1;
