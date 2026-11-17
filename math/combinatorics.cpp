@@ -1,13 +1,9 @@
 // Combinatoria modular - Precalculo O(N + log MOD), consultas O(1)
 // Requiere MOD primo y n < MAXN. Llamar precom() una vez antes de usar.
-// Usa power(x, y, M) de binary-exponentiation.
+// Usa MOD e inv() de modular-inverse.
 
-const ll MOD = 1e9 + 7;
 const int MAXN = 2e6 + 5;
 ll fac[MAXN], ifac[MAXN];
-
-// Inverso modular por Fermat: a^(MOD-2) (MOD primo, a no multiplo de MOD)
-ll inv(ll a) { return power(a % MOD, MOD - 2, MOD); }
 
 void precom() {
     fac[0] = 1;
