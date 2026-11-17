@@ -23,12 +23,12 @@ ll binpowIt(ll a, ll b) {
     return res;
 }
 
-int power(ll x, ll y, ll M)
+ll power(ll x, ll y, ll M)
 {
     if (y == 0)
         return 1;
 
-    int p = power(x, y / 2, M) % M;
+    ll p = power(x, y / 2, M) % M;
     p = (p * p) % M;
 
     return (y % 2 == 0) ? p : (x * p) % M;
